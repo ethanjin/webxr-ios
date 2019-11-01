@@ -7,19 +7,19 @@ extension ARKController: ARSessionObserver {
     
     @objc(sessionWasInterrupted:)
     func sessionWasInterrupted(_ session: ARSession) {
-        DDLogError("sessionWasInterrupted")
+        print("sessionWasInterrupted")
         sessionWasInterrupted()
     }
     
     @objc(sessionInterruptionEnded:)
     func sessionInterruptionEnded(_ session: ARSession) {
-        DDLogError("sessionInterruptionEnded")
+        print("sessionInterruptionEnded")
         sessionInterruptionEnded()
     }
     
     @objc(session:didFailWithError:)
     func session(_ session: ARSession, didFailWithError error: Error) {
-        DDLogError("Session didFailWithError - \(error.localizedDescription)")
+        print("Session didFailWithError - \(error.localizedDescription)")
         didFailSession(error)
     }
     

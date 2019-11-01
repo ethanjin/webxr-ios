@@ -1,6 +1,4 @@
-import FontAwesomeKit
 import UIKit
-import CocoaLumberjack
 
 let URL_FIELD_HEIGHT = 29
 
@@ -91,11 +89,10 @@ class BarView: UIView, UITextFieldDelegate {
         debugBtn.setImage(UIImage(named: "debugOn"), for: .selected)
 
         var error: Error?
-        let streetViewIcon = try? FAKFontAwesome.init(identifier: "fa-street-view", size: 24)
         if error != nil {
             print("\(error?.localizedDescription ?? "")")
         } else {
-            let streetViewImage: UIImage? = streetViewIcon?.image(with: CGSize(width: 24, height: 24))
+            let streetViewImage: UIImage? = nil
             restartTrackingBtn.setImage(streetViewImage, for: .normal)
             restartTrackingBtn.tintColor = UIColor.gray
         }
@@ -157,36 +154,36 @@ class BarView: UIView, UITextFieldDelegate {
     // MARK: - Button Actions
     
     @IBAction func backAction(_ sender: Any) {
-        DDLogDebug("backAction")
+        print("backAction")
         urlField.resignFirstResponder()
         backActionBlock?(sender)
     }
 
     @IBAction func forwardAction(_ sender: Any) {
-        DDLogDebug("forwardAction")
+        print("forwardAction")
         urlField.resignFirstResponder()
         forwardActionBlock?(sender)
     }
 
     @IBAction func homeAction(_ sender: Any) {
-        DDLogDebug("homeAction")
+        print("homeAction")
         homeActionBlock?(sender)
     }
 
     @IBAction func reloadAction(_ sender: Any) {
-        DDLogDebug("reloadAction")
+        print("reloadAction")
         urlField.resignFirstResponder()
         reloadActionBlock?(sender)
     }
 
     @IBAction func cancelAction(_ sender: Any) {
-        DDLogDebug("cancelAction")
+        print("cancelAction")
         urlField.resignFirstResponder()
         cancelActionBlock?(sender)
     }
     
     @IBAction func showPermissionsAction(_ sender: Any) {
-        DDLogDebug("showPermissionsAction")
+        print("showPermissionsAction")
         urlField.resignFirstResponder()
         showPermissionsActionBlock?(sender)
     }

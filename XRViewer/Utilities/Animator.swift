@@ -1,6 +1,4 @@
-import pop
 import UIKit
-import CocoaLumberjack
 
 typealias Completion = (Bool) -> Void
 
@@ -32,28 +30,18 @@ class Animator: NSObject, CAAnimationDelegate {
     }
     
     deinit {
-        DDLogDebug("Animator dealloc")
+        print("Animator dealloc")
     }
     
     @objc func clean() {
         animationCompletions.removeAll()
-        UIApplication.shared.keyWindow?.pop_removeAllAnimations()
-        UIApplication.shared.keyWindow?.layer.pop_removeAllAnimations()
         UIApplication.shared.keyWindow?.layer.removeAllAnimations()
     }
     
     func startPulseAnimation(_ view: UIView?) {
-        let anim = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
-        anim?.toValue = CGPoint(x: 1.1, y: 1.1)
-        anim?.fromValue = CGPoint(x: 0.9, y: 0.9)
-        anim?.repeatForever = true
-        anim?.autoreverses = true
-
-        view?.pop_add(anim, forKey: ANIMATION_PULSE_KEY)
     }
 
     func stopPulseAnimation(_ view: UIView?) {
-        view?.pop_removeAnimation(forKey: ANIMATION_PULSE_KEY)
     }
 
     func animate(_ view: UIView?, toFrame frame: CGRect) {
@@ -71,18 +59,9 @@ class Animator: NSObject, CAAnimationDelegate {
             })
             return
         }
-
-        let anim = POPSpringAnimation(propertyNamed: kPOPViewFrame)
-        anim?.toValue = frame
-        anim?.fromValue = viewFrame
-        anim?.completionBlock = { anim, finished in
-            viewFrame = frame
-            //if completion
-
-            completion(finished)
-        }
-
-        view?.pop_add(anim, forKey: ANIMATION_FRAME_KEY)
+        
+        view?.frame = viewFrame
+        completion(true)
     }
 
     @objc func animate(_ view: UIView?, toFade fade: Bool) {
@@ -136,13 +115,6 @@ class Animator: NSObject, CAAnimationDelegate {
             return
         }
 
-        let anim = POPSpringAnimation(propertyNamed: kPOPViewBackgroundColor)
-        anim?.toValue = color
-        anim?.fromValue = view?.backgroundColor
-        anim?.completionBlock = { anim, finished in
-            view?.backgroundColor = color
-        }
-
-        view?.pop_add(anim, forKey: ANIMATION_COLOR_KEY)
+        view?.backgroundColor = color
     }
 }

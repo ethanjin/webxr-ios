@@ -1,7 +1,5 @@
 import UIKit
 import CoreLocation
-import CocoaLumberjack
-import GCDWebServer
 
 /**
  The main view controller of the app. It's the holder of the other controllers.
@@ -11,10 +9,8 @@ import GCDWebServer
 
 typealias UICompletion = () -> Void
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServerDelegate {
-#if WEBSERVER
-    private var webServer: GCDWebServer?
-#endif
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
+
     @IBOutlet private weak var splashLayerView: LayerView!
     @IBOutlet private weak var arkLayerView: LayerView!
     @IBOutlet private weak var hotLayerView: LayerView!
@@ -90,41 +86,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
             })
         }
     }
-
-#if WEBSERVER
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        var options: [AnyHashable : Any] = [:]
-        options[GCDWebServerOption_Port] = 8080
-        //[options setObject:@NO forKey:GCDWebServerOption_AutomaticallySuspendInBackground];
-
-        let documentsPath = URL(fileURLWithPath: Bundle.main.resourcePath ?? "").appendingPathComponent("Web").path
-
-        if FileManager.default.fileExists(atPath: documentsPath) {
-            webServer = GCDWebServer()
-            webServer?.addGETHandler(forBasePath: "/", directoryPath: documentsPath, indexFilename: "index.html", cacheAge: 0, allowRangeRequests: true)
-
-            webServer?.delegate = self
-            do {
-                try webServer?.start(options: options)
-                print("GCDWebServer running locally on port \(webServer?.port ?? 0)")
-            } catch {
-                print("GCDWebServer not running! Error: \(error.localizedDescription)")
-            }
-        } else {
-            print("No Web directory, GCDWebServer not running!")
-        }
-    }
-#endif
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
-#if WEBSERVER
-        webServer?.stop()
-        webServer = nil
-#endif
     }
 
     @objc func swipe(fromEdge recognizer: UISwipeGestureRecognizer?) {
@@ -164,7 +128,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
-        DDLogError("didReceiveMemoryWarning")
+        print("didReceiveMemoryWarning")
 
         processMemoryWarning()
     }
@@ -532,7 +496,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         let ReachBlock: (() -> Void)? = {
             let netStatus = blockSelf?.reachability?.connection
                 let isReachable: Bool = netStatus != .none
-                DDLogDebug("Connection isReachable - \(isReachable)")
+                print("Connection isReachable - \(isReachable)")
 
                 if isReachable {
                     blockSelf?.stateController.applyOnReachableAction()

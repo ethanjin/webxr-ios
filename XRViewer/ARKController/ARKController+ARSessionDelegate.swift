@@ -17,7 +17,7 @@ extension ARKController: ARSessionDelegate {
     
     @objc(session:didAddAnchors:)
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-        DDLogDebug("Add Anchors - \(anchors.debugDescription)")
+        print("Add Anchors - \(anchors.debugDescription)")
         
         if webXRAuthorizationStatus == .notDetermined {
             for anchor in anchors {
@@ -69,8 +69,8 @@ extension ARKController: ARSessionDelegate {
     
     @objc(session:didUpdateAnchors:)
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
-        //DDLogDebug(@"Update Anchors - %@", [anchors debugDescription]);
-        //DDLogDebug(@"Update Anchors - %lu", anchors.count);
+        //print(@"Update Anchors - %@", [anchors debugDescription]);
+        //print(@"Update Anchors - %lu", anchors.count);
         for updatedAnchor: ARAnchor in anchors {
             if updatedAnchor is ARFaceAnchor && !(configuration is ARFaceTrackingConfiguration) {
                 print("Trying to update a face anchor in a session configuration that's not ARFaceTrackingConfiguration")
@@ -83,7 +83,7 @@ extension ARKController: ARSessionDelegate {
     
     @objc(session:didRemoveAnchors:)
     func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {
-        DDLogDebug("Remove Anchors - \(anchors.debugDescription)")
+        print("Remove Anchors - \(anchors.debugDescription)")
         for removedAnchor: ARAnchor in anchors {
             
             // logic makes no sense:  if the anchor is in objects[] list, remove it and send removed flag.  otherwise, ignore
@@ -104,7 +104,7 @@ extension ARKController: ARSessionDelegate {
                 }
             } else {
                 if arkitGeneratedAnchorIDUserAnchorIDMap[removedAnchor.identifier.uuidString] != nil {
-                    DDLogDebug("Remove Anchor not in objects, but in UserAnchorIDMap - \(anchorID)")
+                    print("Remove Anchor not in objects, but in UserAnchorIDMap - \(anchorID)")
                 }
             }
         }

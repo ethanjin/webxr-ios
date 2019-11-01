@@ -1,5 +1,4 @@
 import UIKit
-import CocoaLumberjack
 
 typealias OnSwipeDown = () -> Void
 typealias OnSwipeUp = () -> Void
@@ -75,7 +74,7 @@ class UIOverlayController: NSObject {
     }
 
     deinit {
-        DDLogDebug("UIOverlayController dealloc")
+        print("UIOverlayController dealloc")
     }
 
 // MARK: Private

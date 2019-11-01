@@ -82,13 +82,13 @@ extension ARKController {
             if hasBackgroundWorldMap() {
                 worldTrackingConfiguration?.initialWorldMap = backgroundWorldMap
                 backgroundWorldMap = nil
-                DDLogError("using Saved WorldMap to resume session")
+                print("using Saved WorldMap to resume session")
             } else {
                 worldTrackingConfiguration?.initialWorldMap = nil
-                DDLogError("no Saved WorldMap, resuming without background worldmap")
+                print("no Saved WorldMap, resuming without background worldmap")
             }
         } else {
-            DDLogError("resume session on a face-tracking camera")
+            print("resume session on a face-tracking camera")
         }
         session.run(configuration, options: [])
         arSessionState = .ARKSessionRunning
@@ -115,13 +115,13 @@ extension ARKController {
             if hasBackgroundWorldMap() {
                 worldTrackingConfiguration?.initialWorldMap = backgroundWorldMap
                 backgroundWorldMap = nil
-                DDLogError("using Saved WorldMap to resume session")
+                print("using Saved WorldMap to resume session")
             } else {
                 worldTrackingConfiguration?.initialWorldMap = nil
-                DDLogError("no Saved WorldMap, resuming without background worldmap")
+                print("no Saved WorldMap, resuming without background worldmap")
             }
         } else {
-            DDLogError("resume session on a face-tracking camera")
+            print("resume session on a face-tracking camera")
         }
         session.run(configuration, options: [])
         arSessionState = .ARKSessionRunning
@@ -156,7 +156,7 @@ extension ARKController {
             worldTrackingConfiguration?.initialWorldMap = nil
             if hasBackgroundWorldMap() {
                 backgroundWorldMap = nil
-                DDLogError("clearing Saved Background WorldMap from resume session")
+                print("clearing Saved Background WorldMap from resume session")
             }
             
             worldTrackingConfiguration?.maximumNumberOfTrackedImages = state.numberOfTrackedImages

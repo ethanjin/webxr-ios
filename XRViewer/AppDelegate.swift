@@ -1,5 +1,4 @@
 import UIKit
-import CocoaLumberjack
 import CoreMotion
 
 @UIApplicationMain
@@ -8,8 +7,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         registerDefaultsFromSettingsBundle()
-
-        DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
 
         UIApplication.shared.isIdleTimerDisabled = true
 
@@ -67,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var urlString = String(absoluteString.suffix(from: index))
             urlString = "https://\(urlString)"
 
-            DDLogDebug("WebXR-iOS viewer opened with URL: \(urlString)")
+            print("WebXR-iOS viewer opened with URL: \(urlString)")
             UserDefaults.standard.set(urlString, forKey: REQUESTED_URL_KEY)
 
             return true

@@ -65,14 +65,14 @@ class ARKMetalController: NSObject, ARKControllerProtocol, MTKViewDelegate {
         renderView?.delegate = self
         
         guard let size = renderView?.bounds.size else {
-            DDLogError("Error accessing the renderView size")
+            print("Error accessing the renderView size")
             return false
         }
 
         // Tony 2/21/19: Commenting out below 5 lines until Metal is utilized (need to cast
         // MTKView as RenderDestinationProvider).
 //        guard let device = renderView?.device else {
-//            DDLogError("Metal is not supported on this device")
+//            print("Metal is not supported on this device")
 //            return false
 //        }
 //        renderer = Renderer(session: session, metalDevice: device, renderDestinationProvider: renderView)

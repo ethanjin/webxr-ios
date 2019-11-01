@@ -1,7 +1,6 @@
 import CoreLocation
 import Foundation
 import os
-import CocoaLumberjack
 
 typealias DidUpdateLocation = (CLLocation?) -> Void
 typealias DidRequestAuth = (Bool) -> Void
@@ -29,12 +28,12 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     deinit {
-        DDLogDebug("LocationManager dealloc")
+        print("LocationManager dealloc")
     }
 
     func startUpdateLocation() {
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            DDLogError("Location isn't allowed !")
+            print("Location isn't allowed !")
             return
         }
 
@@ -43,7 +42,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
 
     func stopUpdateLocation() {
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            DDLogError("Location isn't allowed !")
+            print("Location isn't allowed !")
             return
         }
         manager.stopUpdatingLocation()
@@ -51,7 +50,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
 
     func startUpdateHeading() {
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            DDLogError("Location isn't allowed !")
+            print("Location isn't allowed !")
             return
         }
         
@@ -60,7 +59,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func stopUpdateHeading() {
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            DDLogError("Location isn't allowed !")
+            print("Location isn't allowed !")
             return
         }
         manager.stopUpdatingHeading()
@@ -164,11 +163,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        DDLogError("Location error - \(error)")
+        print("Location error - \(error)")
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        DDLogDebug("locationManager didChangeAuthorizationStatus - \(status)")
+        print("locationManager didChangeAuthorizationStatus - \(status)")
 
         //if authBlock
 

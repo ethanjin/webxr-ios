@@ -15,8 +15,6 @@
 		04A9837A1F32291D00120CF8 /* ARKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A983651F32268900120CF8 /* ARKController.m */; };
 		04A9837C1F32292900120CF8 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 04A9836A1F3226A500120CF8 /* Shaders.metal */; };
 		591A8C502FA83D70E8F5B5B4 /* Pods_XRViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CB6E6E1AD338266A9AB3DC /* Pods_XRViewer.framework */; };
-		6207254E206A90BF00887B1F /* RequestPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6207254C206A90BF00887B1F /* RequestPermissionsViewController.swift */; };
-		6207254F206A90BF00887B1F /* RequestPermissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6207254D206A90BF00887B1F /* RequestPermissionsViewController.xib */; };
 		620D24A11FC48994002127FD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 620D24A01FC48994002127FD /* Settings.bundle */; };
 		62242AC0201F037F00506412 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242ABF201F037F00506412 /* SettingsViewController.swift */; };
 		62242AC3201F2A0700506412 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242AC1201F2A0700506412 /* TextInputTableViewCell.swift */; };
@@ -89,8 +87,6 @@
 		04A9836A1F3226A500120CF8 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		04BB9D641F39BE40004328A2 /* ARKHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARKHelper.h; sourceTree = "<group>"; };
 		23C446431F25D48210AB29A1 /* Pods-XRViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XRViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-XRViewer/Pods-XRViewer.release.xcconfig"; sourceTree = "<group>"; };
-		6207254C206A90BF00887B1F /* RequestPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPermissionsViewController.swift; sourceTree = "<group>"; };
-		6207254D206A90BF00887B1F /* RequestPermissionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestPermissionsViewController.xib; sourceTree = "<group>"; };
 		620D24A01FC48994002127FD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		62242ABF201F037F00506412 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		62242AC1201F2A0700506412 /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
@@ -328,8 +324,6 @@
 		6207254B206A909100887B1F /* RequestPermissionsController */ = {
 			isa = PBXGroup;
 			children = (
-				6207254C206A90BF00887B1F /* RequestPermissionsViewController.swift */,
-				6207254D206A90BF00887B1F /* RequestPermissionsViewController.xib */,
 				B6B7A6962266594B008E8978 /* RequestXRPermissionsViewController.swift */,
 				B6B7A6972266594B008E8978 /* RequestXRPermissionsViewController.xib */,
 			);
@@ -384,7 +378,6 @@
 				041503BD1F28944F00887400 /* Sources */,
 				041503BE1F28944F00887400 /* Frameworks */,
 				041503BF1F28944F00887400 /* Resources */,
-				221606BE81C9D422A4D5F9C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -434,7 +427,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				041503D71F28944F00887400 /* LaunchScreen.storyboard in Resources */,
-				6207254F206A90BF00887B1F /* RequestPermissionsViewController.xib in Resources */,
 				8E5089D8211B6DA90059015B /* webxr.js in Resources */,
 				0401E04B1F612C240075D823 /* BarView.xib in Resources */,
 				041503D21F28944F00887400 /* Main.storyboard in Resources */,
@@ -472,36 +464,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		221606BE81C9D422A4D5F9C6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XRViewer/Pods-XRViewer-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
-				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
-				"${BUILT_PRODUCTS_DIR}/MozillaTelemetry/MozillaTelemetry.framework",
-				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MozillaTelemetry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XRViewer/Pods-XRViewer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -557,7 +519,6 @@
 				B6FAD7C0221F2F9100310114 /* ARKMetalController.swift in Sources */,
 				B620ED142204B5480066B4A8 /* ARKController+Camera.swift in Sources */,
 				6241012D1FEABABF006FDBE3 /* AnalyticsManager.swift in Sources */,
-				6207254E206A90BF00887B1F /* RequestPermissionsViewController.swift in Sources */,
 				B632850721C2D98A00FD5510 /* LocationManager.swift in Sources */,
 				B632851721C4330500FD5510 /* Constants.swift in Sources */,
 			);
@@ -702,7 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L3Y5M4S33M;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -711,8 +672,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/XRViewer/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D USE_ANALYTICS";
-				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewer;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewercmb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "XRViewer/Resources/XRViewer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -727,7 +688,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L3Y5M4S33M;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -736,8 +697,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/XRViewer/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D USE_ANALYTICS";
-				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewer;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewercmb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "XRViewer/Resources/XRViewer-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

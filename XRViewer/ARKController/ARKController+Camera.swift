@@ -6,29 +6,29 @@
         device = AVCaptureDevice.default(for: .video)
         
         if device == nil {
-            DDLogError("Camera device is NIL")
+            print("Camera device is NIL")
             return
         }
         
         do {
             try device.lockForConfiguration()
         } catch {
-            DDLogError("Camera lock error")
+            print("Camera lock error")
             return
         }
         
         if device.isFocusModeSupported(.continuousAutoFocus) {
-            DDLogDebug("AVCaptureFocusModeContinuousAutoFocus Supported")
+            print("AVCaptureFocusModeContinuousAutoFocus Supported")
             device.focusMode = .continuousAutoFocus
         }
         
         if device.isFocusPointOfInterestSupported {
-            DDLogDebug("FocusPointOfInterest Supported")
+            print("FocusPointOfInterest Supported")
             device.focusPointOfInterest = CGPoint(x: 0.5, y: 0.5)
         }
         
         if device.isSmoothAutoFocusSupported {
-            DDLogDebug("SmoothAutoFocus Supported")
+            print("SmoothAutoFocus Supported")
             device.isSmoothAutoFocusEnabled = true
         }
         
