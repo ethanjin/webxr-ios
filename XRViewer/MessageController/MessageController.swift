@@ -10,6 +10,26 @@ enum ResetTrackingOption {
     case loadSavedWorldMap
 }
 
+class BlockBarButtonItem: UIBarButtonItem {
+    private var actionHandler: (() -> Void)?
+    
+    convenience init(title: String?, style: UIBarButtonItem.Style, actionHandler: (() -> Void)?) {
+        self.init(title: title, style: style, target: nil, action: #selector(barButtonItemPressed))
+        self.target = self
+        self.actionHandler = actionHandler
+    }
+    
+    convenience init(image: UIImage?, style: UIBarButtonItem.Style, actionHandler: (() -> Void)?) {
+        self.init(image: image, style: style, target: nil, action: #selector(barButtonItemPressed))
+        self.target = self
+        self.actionHandler = actionHandler
+    }
+    
+    @objc func barButtonItemPressed(sender: UIBarButtonItem) {
+        actionHandler?()
+    }
+}
+
 class MessageController: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     @objc var didShowMessage: (() -> Void)?
@@ -20,7 +40,7 @@ class MessageController: NSObject, UITableViewDelegate, UITableViewDataSource {
     var requestXRPermissionsVC: RequestXRPermissionsViewController?
     private var webXRAuthorizationRequested: WebXRAuthorizationState = .notDetermined
     private var site: String?
-    var permissionsPopup: UIAlertController?
+    var permissionsPopup: UINavigationController?
     var forceShowPermissionsPopup = false
 
     @objc init(viewController vc: UIViewController?) {
@@ -217,218 +237,219 @@ class MessageController: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func showMessageAboutEnteringXR(_ authorizationRequested: WebXRAuthorizationState, authorizationGranted: @escaping (WebXRAuthorizationState) -> Void, url: URL) {
-//        weak var blockSelf: MessageController? = self
-//        let standardUserDefaults = UserDefaults.standard
-//        let allowedMinimalSites = standardUserDefaults.dictionary(forKey: Constant.allowedMinimalSitesKey())
-//        let allowedWorldSensingSites = standardUserDefaults.dictionary(forKey: Constant.allowedWorldSensingSitesKey())
-//        let allowedVideoCameraSites = standardUserDefaults.dictionary(forKey: Constant.allowedVideoCameraSitesKey())
-//        guard var currentSite: String = url.host else { return }
-//        webXRAuthorizationRequested = authorizationRequested
-//
-//        if let port = url.port {
-//            currentSite = currentSite + ":\(port)"
-//        }
-//        site = currentSite
-//
-//        if !forceShowPermissionsPopup {
-//
-//            switch authorizationRequested {
-//            case .minimal:
-//                standardUserDefaults.set(true, forKey: Constant.minimalWebXREnabled())
-//                if allowedMinimalSites?[currentSite] != nil {
-//                    authorizationGranted(.minimal)
-//                    return
-//                }
-//            case .worldSensing:
-//                standardUserDefaults.set(true, forKey: Constant.minimalWebXREnabled())
-//                standardUserDefaults.set(true, forKey: Constant.worldSensingWebXREnabled())
-//                if standardUserDefaults.bool(forKey: Constant.alwaysAllowWorldSensingKey())
-//                    || allowedWorldSensingSites?[currentSite] != nil
-//                {
-//                    authorizationGranted(.worldSensing)
-//                    return
-//                }
-//            case .videoCameraAccess:
-//                standardUserDefaults.set(true, forKey: Constant.minimalWebXREnabled())
-//                standardUserDefaults.set(true, forKey: Constant.worldSensingWebXREnabled())
-//                standardUserDefaults.set(true, forKey: Constant.videoCameraAccessWebXREnabled())
-//                if allowedVideoCameraSites?[currentSite] != nil {
-//                    authorizationGranted(.videoCameraAccess)
-//                    return
-//                }
-//            default:
-//                break
-//            }
-//        }
-//
-//        var height = CGFloat()
-//        let rowHeight: CGFloat = 44
-//        switch webXRAuthorizationRequested {
-//        case .minimal:
-//            height = rowHeight * 3
-//        case .lite:
-//            height = rowHeight * 3
-//        case .worldSensing:
-//            height = rowHeight * 4
-//        case .videoCameraAccess:
-//            height = rowHeight * 5
-//        default:
-//            height = rowHeight * 1
-//        }
-//        requestXRPermissionsVC = RequestXRPermissionsViewController()
-//        guard let requestXRPermissionsVC = requestXRPermissionsVC else { return }
-//        requestXRPermissionsVC.view.translatesAutoresizingMaskIntoConstraints = true
-//        requestXRPermissionsVC.tableView.heightAnchor.constraint(equalToConstant: height).isActive = true
-//        requestXRPermissionsVC.tableView.isScrollEnabled = false
-//        requestXRPermissionsVC.tableView.delegate = self
-//        requestXRPermissionsVC.tableView.dataSource = self
-//        requestXRPermissionsVC.tableView.register(UINib(nibName: "SwitchInputTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "SwitchInputTableViewCell")
-//        requestXRPermissionsVC.tableView.register(UINib(nibName: "SegmentedControlTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "SegmentedControlTableViewCell")
-//
-//        var title: String
-//        var message: String
-//        switch webXRAuthorizationRequested {
-//        case .minimal:
-//            title = "Allow usage of Device Motion?"
-//            message = "WebXR displays video from your camera without giving this web page access to the video."
-//        case .lite:
-//            title = "Allow Lite Mode?"
-//            message = """
-//                Lite Mode:
-//                -Uses a single real world plane
-//                -Looks for faces
-//            """
-//        case .worldSensing:
-//            title = "Allow World Sensing?"
-//            message = """
-//                World Sensing:
-//                -Uses real world planes & lighting
-//                -Looks for faces & images
-//            """
-//        case .videoCameraAccess:
-//            title = "Allow Video Camera Access?"
-//            message = """
-//                Video Camera Access:
-//                -Accesses your camera's live image
-//                -Uses real world planes & lighting
-//                -Looks for faces & images
-//            """
-//        default:
-//            title = "This site is not requesting WebXR authorization"
-//            message = "No video from your camera, planes, faces, or things in the real world will be shared with this site."
-//        }
-//        requestXRPermissionsVC.titleLabel.text = title
-//        requestXRPermissionsVC.messageLabel.text = message
-//        let alertController = PopupDialog(viewController: requestXRPermissionsVC,
-//                                          buttonAlignment: .horizontal,
-//                                          transitionStyle: .bounceUp,
-//                                          preferredWidth: 300,
-//                                          tapGestureDismissal: false,
-//                                          panGestureDismissal: false,
-//                                          hideStatusBar: false,
-//                                          completion: nil)
-//        let negativeAction: CancelButton
-//        if forceShowPermissionsPopup {
-//            negativeAction = CancelButton(title: "Dismiss", action: nil)
-//        } else {
-//            negativeAction = CancelButton(title: "Deny") {
-//                authorizationGranted(.denied)
-//            }
-//        }
-//        alertController.addButton(negativeAction)
-//        forceShowPermissionsPopup = false
-//
-//        let confirmAction = DefaultButton(title: "Confirm") {
-//            if let minimalCell = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? SwitchInputTableViewCell {
-//                standardUserDefaults.set(minimalCell.switchControl.isOn, forKey: Constant.minimalWebXREnabled())
-//            }
-//            if let liteCell = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? SwitchInputTableViewCell {
-//                standardUserDefaults.set(liteCell.switchControl.isOn, forKey: Constant.liteModeWebXREnabled())
-//            }
-//            if let worldSensingCell = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? SwitchInputTableViewCell {
-//                standardUserDefaults.set(worldSensingCell.switchControl.isOn, forKey: Constant.worldSensingWebXREnabled())
-//            }
-//            if let videoCameraAccessCell = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? SwitchInputTableViewCell {
-//                standardUserDefaults.set(videoCameraAccessCell.switchControl.isOn, forKey: Constant.videoCameraAccessWebXREnabled())
-//            }
-//
-//            switch blockSelf?.webXRAuthorizationRequested {
-//            case .minimal?:
-//                if standardUserDefaults.bool(forKey: Constant.liteModeWebXREnabled()) {
-//                    authorizationGranted(.lite)
-//                } else if standardUserDefaults.bool(forKey: Constant.minimalWebXREnabled()) {
-//                    guard let minimalControl = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? SegmentedControlTableViewCell else { return }
-//
-//                    var newDict = [AnyHashable : Any]()
-//                    if let dict = allowedMinimalSites {
-//                        newDict = dict
-//                    }
-//                    if minimalControl.segmentedControl.selectedSegmentIndex == 1 {
-//                        newDict[currentSite] = "YES"
-//                    } else {
-//                        newDict[currentSite] = nil
-//                    }
-//                    UserDefaults.standard.set(newDict, forKey: Constant.allowedMinimalSitesKey())
-//                    authorizationGranted(.minimal)
-//                } else {
-//                    authorizationGranted(.denied)
-//                }
-//            case .lite?:
-//                authorizationGranted(standardUserDefaults.bool(forKey: Constant.liteModeWebXREnabled()) ? .lite : .denied)
-//            case .worldSensing?:
-//                if standardUserDefaults.bool(forKey: Constant.liteModeWebXREnabled()) {
-//                    authorizationGranted(.lite)
-//                } else if standardUserDefaults.bool(forKey: Constant.worldSensingWebXREnabled()) {
-//                    guard let worldControl = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? SegmentedControlTableViewCell else { return }
-//
-//                    var newDict = [AnyHashable : Any]()
-//                    if let dict = allowedWorldSensingSites {
-//                        newDict = dict
-//                    }
-//                    if worldControl.segmentedControl.selectedSegmentIndex == 1 {
-//                        newDict[currentSite] = "YES"
-//                    } else {
-//                        newDict[currentSite] = nil
-//                    }
-//                    UserDefaults.standard.set(newDict, forKey: Constant.allowedWorldSensingSitesKey())
-//                    authorizationGranted(.worldSensing)
-//                } else if standardUserDefaults.bool(forKey: Constant.minimalWebXREnabled()) {
-//                    authorizationGranted(.minimal)
-//                } else {
-//                    authorizationGranted(.denied)
-//                }
-//            case .videoCameraAccess?:
-//                if standardUserDefaults.bool(forKey: Constant.videoCameraAccessWebXREnabled()) {
-//                    guard let videoControl = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 4, section: 0)) as? SegmentedControlTableViewCell else { return }
-//
-//                    var newDict = [AnyHashable : Any]()
-//                    if let dict = allowedVideoCameraSites {
-//                        newDict = dict
-//                    }
-//                    if videoControl.segmentedControl.selectedSegmentIndex == 1 {
-//                        newDict[currentSite] = "YES"
-//                    } else {
-//                        newDict[currentSite] = nil
-//                    }
-//                    UserDefaults.standard.set(newDict, forKey: Constant.allowedVideoCameraSitesKey())
-//                    authorizationGranted(.videoCameraAccess)
-//                } else if standardUserDefaults.bool(forKey: Constant.liteModeWebXREnabled()) {
-//                    authorizationGranted(.lite)
-//                } else if standardUserDefaults.bool(forKey: Constant.worldSensingWebXREnabled()) {
-//                    authorizationGranted(.worldSensing)
-//                } else if standardUserDefaults.bool(forKey: Constant.minimalWebXREnabled()) {
-//                    authorizationGranted(.minimal)
-//                } else {
-//                    authorizationGranted(.denied)
-//                }
-//            default:
-//                authorizationGranted(.denied)
-//            }
-//        }
-//        alertController.addButton(confirmAction)
-//
-//        permissionsPopup = alertController
-//        viewController?.present(alertController, animated: true)
+        weak var blockSelf: MessageController? = self
+        let standardUserDefaults = UserDefaults.standard
+        let allowedMinimalSites = standardUserDefaults.dictionary(forKey: Constant.allowedMinimalSitesKey())
+        let allowedWorldSensingSites = standardUserDefaults.dictionary(forKey: Constant.allowedWorldSensingSitesKey())
+        let allowedVideoCameraSites = standardUserDefaults.dictionary(forKey: Constant.allowedVideoCameraSitesKey())
+        guard var currentSite: String = url.host else { return }
+        webXRAuthorizationRequested = authorizationRequested
+
+        if let port = url.port {
+            currentSite = currentSite + ":\(port)"
+        }
+        site = currentSite
+
+        if !forceShowPermissionsPopup {
+
+            switch authorizationRequested {
+            case .minimal:
+                standardUserDefaults.set(true, forKey: Constant.minimalWebXREnabled())
+                if allowedMinimalSites?[currentSite] != nil {
+                    authorizationGranted(.minimal)
+                    return
+                }
+            case .worldSensing:
+                standardUserDefaults.set(true, forKey: Constant.minimalWebXREnabled())
+                standardUserDefaults.set(true, forKey: Constant.worldSensingWebXREnabled())
+                if standardUserDefaults.bool(forKey: Constant.alwaysAllowWorldSensingKey())
+                    || allowedWorldSensingSites?[currentSite] != nil
+                {
+                    authorizationGranted(.worldSensing)
+                    return
+                }
+            case .videoCameraAccess:
+                standardUserDefaults.set(true, forKey: Constant.minimalWebXREnabled())
+                standardUserDefaults.set(true, forKey: Constant.worldSensingWebXREnabled())
+                standardUserDefaults.set(true, forKey: Constant.videoCameraAccessWebXREnabled())
+                if allowedVideoCameraSites?[currentSite] != nil {
+                    authorizationGranted(.videoCameraAccess)
+                    return
+                }
+            default:
+                break
+            }
+        }
+
+        var height = CGFloat()
+        let rowHeight: CGFloat = 44
+        switch webXRAuthorizationRequested {
+        case .minimal:
+            height = rowHeight * 3
+        case .lite:
+            height = rowHeight * 3
+        case .worldSensing:
+            height = rowHeight * 4
+        case .videoCameraAccess:
+            height = rowHeight * 5
+        default:
+            height = rowHeight * 1
+        }
+        requestXRPermissionsVC = RequestXRPermissionsViewController()
+        guard let requestXRPermissionsVC = requestXRPermissionsVC else { return }
+        requestXRPermissionsVC.view.translatesAutoresizingMaskIntoConstraints = true
+        requestXRPermissionsVC.tableView.heightAnchor.constraint(equalToConstant: height).isActive = true
+        requestXRPermissionsVC.tableView.isScrollEnabled = false
+        requestXRPermissionsVC.tableView.delegate = self
+        requestXRPermissionsVC.tableView.dataSource = self
+        requestXRPermissionsVC.tableView.register(UINib(nibName: "SwitchInputTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "SwitchInputTableViewCell")
+        requestXRPermissionsVC.tableView.register(UINib(nibName: "SegmentedControlTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "SegmentedControlTableViewCell")
+
+        var title: String
+        var message: String
+        switch webXRAuthorizationRequested {
+        case .minimal:
+            title = "Allow usage of Device Motion?"
+            message = "WebXR displays video from your camera without giving this web page access to the video."
+        case .lite:
+            title = "Allow Lite Mode?"
+            message = """
+                Lite Mode:
+                -Uses a single real world plane
+                -Looks for faces
+            """
+        case .worldSensing:
+            title = "Allow World Sensing?"
+            message = """
+                World Sensing:
+                -Uses real world planes & lighting
+                -Looks for faces & images
+            """
+        case .videoCameraAccess:
+            title = "Allow Video Camera Access?"
+            message = """
+                Video Camera Access:
+                -Accesses your camera's live image
+                -Uses real world planes & lighting
+                -Looks for faces & images
+            """
+        default:
+            title = "This site is not requesting WebXR authorization"
+            message = "No video from your camera, planes, faces, or things in the real world will be shared with this site."
+        }
+        requestXRPermissionsVC.titleLabel.text = title
+        requestXRPermissionsVC.messageLabel.text = message
+        
+        let navi = UINavigationController(rootViewController: requestXRPermissionsVC)
+        let negativeAction: BlockBarButtonItem
+        
+        if forceShowPermissionsPopup {
+            negativeAction = BlockBarButtonItem(title: "Dismiss", style: .plain, actionHandler: {
+                navi.dismiss(animated: true)
+            })
+        } else {
+            negativeAction = BlockBarButtonItem(title: "Deny", style: .plain, actionHandler: {
+                authorizationGranted(.denied)
+                navi.dismiss(animated: true)
+            })
+        }
+        requestXRPermissionsVC.navigationItem.leftBarButtonItems = [negativeAction]
+        forceShowPermissionsPopup = false
+
+        let confirmAction = BlockBarButtonItem(title: "Confirm", style: .plain, actionHandler: {
+            if let minimalCell = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? SwitchInputTableViewCell {
+                standardUserDefaults.set(minimalCell.switchControl.isOn, forKey: Constant.minimalWebXREnabled())
+            }
+            if let liteCell = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? SwitchInputTableViewCell {
+                standardUserDefaults.set(liteCell.switchControl.isOn, forKey: Constant.liteModeWebXREnabled())
+            }
+            if let worldSensingCell = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? SwitchInputTableViewCell {
+                standardUserDefaults.set(worldSensingCell.switchControl.isOn, forKey: Constant.worldSensingWebXREnabled())
+            }
+            if let videoCameraAccessCell = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? SwitchInputTableViewCell {
+                standardUserDefaults.set(videoCameraAccessCell.switchControl.isOn, forKey: Constant.videoCameraAccessWebXREnabled())
+            }
+
+            switch blockSelf?.webXRAuthorizationRequested {
+            case .minimal?:
+                if standardUserDefaults.bool(forKey: Constant.liteModeWebXREnabled()) {
+                    authorizationGranted(.lite)
+                } else if standardUserDefaults.bool(forKey: Constant.minimalWebXREnabled()) {
+                    guard let minimalControl = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? SegmentedControlTableViewCell else { return }
+
+                    var newDict = [AnyHashable : Any]()
+                    if let dict = allowedMinimalSites {
+                        newDict = dict
+                    }
+                    if minimalControl.segmentedControl.selectedSegmentIndex == 1 {
+                        newDict[currentSite] = "YES"
+                    } else {
+                        newDict[currentSite] = nil
+                    }
+                    UserDefaults.standard.set(newDict, forKey: Constant.allowedMinimalSitesKey())
+                    authorizationGranted(.minimal)
+                } else {
+                    authorizationGranted(.denied)
+                }
+            case .lite?:
+                authorizationGranted(standardUserDefaults.bool(forKey: Constant.liteModeWebXREnabled()) ? .lite : .denied)
+            case .worldSensing?:
+                if standardUserDefaults.bool(forKey: Constant.liteModeWebXREnabled()) {
+                    authorizationGranted(.lite)
+                } else if standardUserDefaults.bool(forKey: Constant.worldSensingWebXREnabled()) {
+                    guard let worldControl = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? SegmentedControlTableViewCell else { return }
+
+                    var newDict = [AnyHashable : Any]()
+                    if let dict = allowedWorldSensingSites {
+                        newDict = dict
+                    }
+                    if worldControl.segmentedControl.selectedSegmentIndex == 1 {
+                        newDict[currentSite] = "YES"
+                    } else {
+                        newDict[currentSite] = nil
+                    }
+                    UserDefaults.standard.set(newDict, forKey: Constant.allowedWorldSensingSitesKey())
+                    authorizationGranted(.worldSensing)
+                } else if standardUserDefaults.bool(forKey: Constant.minimalWebXREnabled()) {
+                    authorizationGranted(.minimal)
+                } else {
+                    authorizationGranted(.denied)
+                }
+            case .videoCameraAccess?:
+                if standardUserDefaults.bool(forKey: Constant.videoCameraAccessWebXREnabled()) {
+                    guard let videoControl = blockSelf?.requestXRPermissionsVC?.tableView.cellForRow(at: IndexPath(row: 4, section: 0)) as? SegmentedControlTableViewCell else { return }
+
+                    var newDict = [AnyHashable : Any]()
+                    if let dict = allowedVideoCameraSites {
+                        newDict = dict
+                    }
+                    if videoControl.segmentedControl.selectedSegmentIndex == 1 {
+                        newDict[currentSite] = "YES"
+                    } else {
+                        newDict[currentSite] = nil
+                    }
+                    UserDefaults.standard.set(newDict, forKey: Constant.allowedVideoCameraSitesKey())
+                    authorizationGranted(.videoCameraAccess)
+                } else if standardUserDefaults.bool(forKey: Constant.liteModeWebXREnabled()) {
+                    authorizationGranted(.lite)
+                } else if standardUserDefaults.bool(forKey: Constant.worldSensingWebXREnabled()) {
+                    authorizationGranted(.worldSensing)
+                } else if standardUserDefaults.bool(forKey: Constant.minimalWebXREnabled()) {
+                    authorizationGranted(.minimal)
+                } else {
+                    authorizationGranted(.denied)
+                }
+            default:
+                authorizationGranted(.denied)
+            }
+            
+            navi.dismiss(animated: true)
+        })
+
+        requestXRPermissionsVC.navigationItem.rightBarButtonItems = [confirmAction]
+
+        permissionsPopup = navi
+        viewController?.present(navi, animated: true)
     }
     
     @objc func switchValueDidChange(sender: UISwitch) {
