@@ -103,7 +103,7 @@ extension ViewController {
         case .notAvailable:
             trackingStatusIcon.image = UIImage(named: "warning-old")
             trackingStatusIcon.tintColor = .red
-        case .limited:
+        case .limited(let reason):
             trackingStatusIcon.image = UIImage(named: "warning-old")
             trackingStatusIcon.tintColor = .orange
         case .normal:
