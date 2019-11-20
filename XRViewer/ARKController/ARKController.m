@@ -2,7 +2,12 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Accelerate/Accelerate.h>
 #import "Compression.h"
+
+#if TargetFramework
+#import <WebXR/WebXR-Swift.h>
+#else
 #import "XRViewer-Swift.h"
+#endif
 
 @interface ARKController () {
 }

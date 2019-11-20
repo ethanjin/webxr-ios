@@ -35,7 +35,7 @@
         return result
     }
     
-    func createRequestedDetectionImages() {
+    public func createRequestedDetectionImages() {
         for referenceImageDictionary: [AnyHashable : Any] in detectionImageCreationRequests as? [[AnyHashable : Any]] ?? [] {
             _createDetectionImage(referenceImageDictionary)
         }

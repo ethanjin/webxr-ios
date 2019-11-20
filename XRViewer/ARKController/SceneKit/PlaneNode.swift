@@ -1,7 +1,7 @@
 import ARKit
 import SceneKit
 
-class PlaneNode: SCNNode {
+open class PlaneNode: SCNNode {
     @objc init(anchor: ARPlaneAnchor?) {
         super.init()
 
@@ -9,7 +9,7 @@ class PlaneNode: SCNNode {
         update(anchor)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

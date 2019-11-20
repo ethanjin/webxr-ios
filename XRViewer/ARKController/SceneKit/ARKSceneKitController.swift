@@ -1,7 +1,7 @@
 import ARKit
 import SceneKit
 
-class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate {
+open class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate {
     
     private var session: ARSession?
     private var renderView: ARSCNView?
@@ -18,13 +18,13 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
             updateModes()
         }
     }
-    var planes: [UUID : PlaneNode] = [:]
+    public var planes: [UUID : PlaneNode] = [:]
     private var planeHitTestResults: [ARHitTestResult] = []
     private var currentHitTest: HitTestResult?
     private var focus: FocusNode?
     private var hitTestFocusPoint = CGPoint.zero
-    var previewingSinglePlane = false
-    var focusedPlane: PlaneNode? {
+    public var previewingSinglePlane = false
+    public var focusedPlane: PlaneNode? {
         didSet {
             if focusedPlane == nil {
                 oldValue?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Models.scnassets/plane_grid1.png")
@@ -36,7 +36,7 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
         print("ARKSceneKitController dealloc")
     }
 
-    required init(sesion session: ARSession?, size: CGSize) {
+    required public init(sesion session: ARSession?, size: CGSize) {
         super.init()
         
         setupAR(with: session, size: size)
@@ -46,13 +46,13 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
         setupFocus()
     }
 
-    func update(_ session: ARSession?) {
+    public func update(_ session: ARSession?) {
         self.session = session
         guard let session = session else { return }
         renderView?.session = session
     }
 
-    func clean() {
+    public func clean() {
         for (_, plane) in planes {
             plane.removeFromParentNode()
         }
@@ -68,7 +68,7 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
         planeHitTestResults = []
     }
 
-    func hitTest(_ point: CGPoint, with type: ARHitTestResult.ResultType) -> [Any]? {
+    public func hitTest(_ point: CGPoint, with type: ARHitTestResult.ResultType) -> [Any]? {
         if focusedPlane != nil {
             guard let results = renderView?.hitTest(point, types: type) else { return [] }
             guard let chosenPlane = focusedPlane else { return [] }
@@ -96,7 +96,7 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
         }
     }
 
-    func cameraProjectionTransform() -> matrix_float4x4 {
+    public func cameraProjectionTransform() -> matrix_float4x4 {
         guard let camera = camera else { return matrix_identity_float4x4}
         return float4x4(camera.projectionTransform)
     }
@@ -223,7 +223,7 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
 
 // MARK: - ARSCNViewDelegate
 
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    private func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async(execute: {
             let lightEstimate: CGFloat? = self.session?.currentFrame?.lightEstimate?.ambientIntensity
 
@@ -236,7 +236,7 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
         })
     }
 
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+    private func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async(execute: {
             if anchor is ARPlaneAnchor {
                 var plane: PlaneNode? = nil
@@ -260,10 +260,10 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
         })
     }
 
-    func renderer(_ renderer: SCNSceneRenderer, willUpdate node: SCNNode, for anchor: ARAnchor) {
+    private func renderer(_ renderer: SCNSceneRenderer, willUpdate node: SCNNode, for anchor: ARAnchor) {
     }
 
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    private func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async(execute: {
             if (anchor is ARPlaneAnchor) {
                 let plane = self.planes[anchor.identifier]
@@ -272,7 +272,7 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
         })
     }
 
-    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+    private func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async(execute: {
             if (node is AnchorNode) {
                 self.anchorsNodes.removeAll(where: { element in element == node })
@@ -284,19 +284,19 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
     
     // MARK: - ARKControllerProtocol
     
-    func getRenderView() -> UIView! {
+    public func getRenderView() -> UIView! {
         return renderView
     }
     
-    func setHitTestFocus(_ point: CGPoint) {
+    public func setHitTestFocus(_ point: CGPoint) {
         hitTestFocusPoint = point
     }
     
-    func setShowMode(_ mode: ShowMode) {
+    public func setShowMode(_ mode: ShowMode) {
         showMode = mode
     }
     
-    func setShowOptions(_ options: ShowOptions) {
+    public func setShowOptions(_ options: ShowOptions) {
         showOptions = options
     }
     

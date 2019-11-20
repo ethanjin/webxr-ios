@@ -24,7 +24,7 @@
         }
     }
     
-    func createDictionary(for addedAnchor: ARAnchor) -> NSDictionary {
+    public func createDictionary(for addedAnchor: ARAnchor) -> NSDictionary {
         let anchorDictionary = NSMutableDictionary.init()
         anchorDictionary[WEB_AR_TRANSFORM_OPTION] = addedAnchor.transform.array()
         anchorDictionary[WEB_AR_MUST_SEND_OPTION] = shouldSend(addedAnchor) ? NSNumber(value: true) : NSNumber(value: false)
@@ -133,7 +133,7 @@
         geometryDictionary["triangleIndices"] = triangleIndices
     }
     
-    func setBlendShapes(_ blendShapes: NSDictionary, toArray blendShapesArray: NSMutableArray) {
+    public func setBlendShapes(_ blendShapes: NSDictionary, toArray blendShapesArray: NSMutableArray) {
         let blendShapesArray = blendShapesArray
         blendShapesArray[0] = blendShapes[ARFaceAnchor.BlendShapeLocation.browDownLeft] ?? 0
         blendShapesArray[1] = blendShapes[ARFaceAnchor.BlendShapeLocation.browDownRight] ?? 0
@@ -409,7 +409,7 @@
         return array
     }
     
-    func anchorID(for anchor: ARAnchor) -> String {
+    public func anchorID(for anchor: ARAnchor) -> String {
         var anchorID: String
         if anchor is ARPlaneAnchor {
             // ARKit system plane anchor
@@ -471,7 +471,7 @@
      @param anchor The anchor to be analyzed
      @return A boolean indicating whether the anchor should be sent to JS or not
      */
-    func shouldSend(_ anchor: ARAnchor) -> Bool {
+    public func shouldSend(_ anchor: ARAnchor) -> Bool {
         var shouldSend: Bool
         if anchor is ARPlaneAnchor {
             // ARKit system plane anchor

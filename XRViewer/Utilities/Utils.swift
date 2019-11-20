@@ -1,14 +1,14 @@
 import Foundation
 import UIKit
 
-class Utils: NSObject {
+open class Utils: NSObject {
     /**
      Gets the interface orientation taking the device orientation as input
      
      @return the UIInterfaceOrientation of the app
      */
 
-    @objc class func getInterfaceOrientationFromDeviceOrientation() -> UIInterfaceOrientation {
+    @objc open class func getInterfaceOrientationFromDeviceOrientation() -> UIInterfaceOrientation {
         let deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
         var interfaceOrientation: UIInterfaceOrientation = .landscapeLeft
         switch deviceOrientation {

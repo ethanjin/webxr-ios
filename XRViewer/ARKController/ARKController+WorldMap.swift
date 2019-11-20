@@ -129,7 +129,7 @@ import Compression
     }
     
     // Actually perform the saving and sending of world map back to the app
-    func _getWorldMap() {
+    public func _getWorldMap() {
         let completion: GetWorldMapCompletionBlock? = getWorldMapPromise
         getWorldMapPromise = nil
         

@@ -2,11 +2,11 @@ import ARKit
 import Metal
 import MetalKit
 
-class ARKMetalController: NSObject, ARKControllerProtocol, MTKViewDelegate {
+open class ARKMetalController: NSObject, ARKControllerProtocol, MTKViewDelegate {
     
-    var previewingSinglePlane: Bool = false
-    var focusedPlane: PlaneNode?
-    var planes: [UUID : PlaneNode] = [:]
+    public var previewingSinglePlane: Bool = false
+    public var focusedPlane: PlaneNode?
+    public var planes: [UUID : PlaneNode] = [:]
     private var renderer: Renderer?
     private var renderView: MTKView?
     private var hitTestFocusPoint = CGPoint.zero
@@ -19,23 +19,23 @@ class ARKMetalController: NSObject, ARKControllerProtocol, MTKViewDelegate {
         }
     }
     
-    required init(sesion session: ARSession?, size: CGSize) {
+    required public init(sesion session: ARSession?, size: CGSize) {
         
     }
     
-    func getRenderView() -> UIView! {
+    public func getRenderView() -> UIView! {
         return renderView
     }
     
-    func setHitTestFocus(_ point: CGPoint) {
+    public func setHitTestFocus(_ point: CGPoint) {
         return
     }
     
-    func hitTest(_ point: CGPoint, with type: ARHitTestResult.ResultType) -> [Any]? {
+    public func hitTest(_ point: CGPoint, with type: ARHitTestResult.ResultType) -> [Any]? {
         return nil
     }
     
-    func cameraProjectionTransform() -> matrix_float4x4 {
+    public func cameraProjectionTransform() -> matrix_float4x4 {
         return matrix_identity_float4x4
     }
     
@@ -46,16 +46,16 @@ class ARKMetalController: NSObject, ARKControllerProtocol, MTKViewDelegate {
         return nil
     }
     
-    func setShowMode(_ mode: ShowMode) {
+    public func setShowMode(_ mode: ShowMode) {
     }
     
-    func setShowOptions(_ options: ShowOptions) {
+    public func setShowOptions(_ options: ShowOptions) {
     }
     
-    func clean() {
+    public func clean() {
     }
     
-    func update(_ session: ARSession?) {
+    public func update(_ session: ARSession?) {
     }
     
     func setupAR(with session: ARSession) -> Bool {
@@ -83,13 +83,13 @@ class ARKMetalController: NSObject, ARKControllerProtocol, MTKViewDelegate {
     
     // MARK: - MTKViewDelegate
     
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+    public func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         DispatchQueue.main.async(execute: {
             self.renderer?.drawRectResized(size, orientation: UIApplication.shared.statusBarOrientation)
         })
     }
     
-    func draw(in view: MTKView) {
+    public func draw(in view: MTKView) {
         renderer?.update()
     }
 }

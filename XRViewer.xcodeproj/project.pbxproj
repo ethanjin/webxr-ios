@@ -72,7 +72,84 @@
 		B6FE960521B61FEE0087A21F /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE960421B61FEE0087A21F /* TouchView.swift */; };
 		B6FEAC0D224AC20200EE0343 /* ShaderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAC0C224AC20200EE0343 /* ShaderTypes.swift */; };
 		B6FEAC0F224AD4D500EE0343 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAC0E224AD4D500EE0343 /* Renderer.swift */; };
+		D24885222384F26C008F708F /* WebXR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D24885192384F26C008F708F /* WebXR.framework */; };
+		D24885272384F26C008F708F /* WebXRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D24885262384F26C008F708F /* WebXRTests.m */; };
+		D24885292384F26C008F708F /* WebXR.h in Headers */ = {isa = PBXBuildFile; fileRef = D248851B2384F26C008F708F /* WebXR.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D24885302384F2ED008F708F /* RequestXRPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B7A6962266594B008E8978 /* RequestXRPermissionsViewController.swift */; };
+		D24885312384F2F4008F708F /* RequestXRPermissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B7A6972266594B008E8978 /* RequestXRPermissionsViewController.xib */; };
+		D24885322384F2FA008F708F /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6241012C1FEABABF006FDBE3 /* AnalyticsManager.swift */; };
+		D24885332384F2FE008F708F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62CE86221CAD3B00053F9B3 /* ViewController.swift */; };
+		D24885342384F300008F708F /* ViewController+MessagePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6468D8F228F5074002F22A3 /* ViewController+MessagePanel.swift */; };
+		D24885352384F30B008F708F /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B632851221C4159B00FD5510 /* LayerView.swift */; };
+		D24885362384F30E008F708F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B698073F21DA7A8900322782 /* AppState.swift */; };
+		D24885372384F311008F708F /* AppStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE960221B61BDC0087A21F /* AppStateController.swift */; };
+		D24885382384F315008F708F /* ARKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 04BB9D641F39BE40004328A2 /* ARKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D24885392384F318008F708F /* ARKController.h in Headers */ = {isa = PBXBuildFile; fileRef = 04A983661F32268900120CF8 /* ARKController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D248853A2384F31A008F708F /* ARKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A983651F32268900120CF8 /* ARKController.m */; };
+		D248853B2384F31D008F708F /* ARKController+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654FED321F1179B0004F001 /* ARKController+Anchors.swift */; };
+		D248853C2384F320008F708F /* ARKController+AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654FED121EF99150004F001 /* ARKController+AppState.swift */; };
+		D248853D2384F323008F708F /* ARKController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620ED0F21FB90A50066B4A8 /* ARKController+ARSessionDelegate.swift */; };
+		D248853E2384F325008F708F /* ARKController+ARSessionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6468D8D228CC20C002F22A3 /* ARKController+ARSessionObserver.swift */; };
+		D248853F2384F328008F708F /* ARKController+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620ED132204B5480066B4A8 /* ARKController+Camera.swift */; };
+		D24885402384F32A008F708F /* ARKController+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4C0BC221B5AEC009ECC06 /* ARKController+Frame.swift */; };
+		D24885412384F32C008F708F /* ARKController+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620ED0D21F7B2E90066B4A8 /* ARKController+Images.swift */; };
+		D24885422384F32F008F708F /* ARKController+WorldMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620ED1122024D5A0066B4A8 /* ARKController+WorldMap.swift */; };
+		D24885432384F331008F708F /* ARKControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A7C5021BB34C40033170C /* ARKControllerProtocol.swift */; };
+		D24885442384F333008F708F /* HitTestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A7C4E21BB2FAB0033170C /* HitTestResult.swift */; };
+		D24885452384F337008F708F /* ARKSceneKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B19FD21B9832A00787AA5 /* ARKSceneKitController.swift */; };
+		D24885462384F33A008F708F /* ARSCNView+HitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C048121B838A300C9A4EC /* ARSCNView+HitTest.swift */; };
+		D24885472384F33C008F708F /* SCNNode+Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C047F21B836E300C9A4EC /* SCNNode+Show.swift */; };
+		D24885482384F33E008F708F /* FocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C047921B73E9800C9A4EC /* FocusNode.swift */; };
+		D24885492384F342008F708F /* PlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C047D21B8325F00C9A4EC /* PlaneNode.swift */; };
+		D248854A2384F345008F708F /* AnchorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C047521B7333500C9A4EC /* AnchorNode.swift */; };
+		D248854B2384F34B008F708F /* ARKMetalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FAD7BF221F2F9100310114 /* ARKMetalController.swift */; };
+		D248854C2384F350008F708F /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAC0E224AD4D500EE0343 /* Renderer.swift */; };
+		D248854D2384F352008F708F /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 04A9836A1F3226A500120CF8 /* Shaders.metal */; };
+		D248854E2384F355008F708F /* ShaderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAC0C224AC20200EE0343 /* ShaderTypes.swift */; };
+		D248854F2384F359008F708F /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658C0F121BF43D500538D57 /* WebController.swift */; };
+		D24885502384F35C008F708F /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679967821B06A7000612AF4 /* BarView.swift */; };
+		D24885512384F35E008F708F /* ActivityIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2B2622249D500031955F /* ActivityIndicatorButton.swift */; };
+		D24885522384F361008F708F /* BarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0401E04A1F612C240075D823 /* BarView.xib */; };
+		D24885532384F365008F708F /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B632850821C2F24200FD5510 /* MessageController.swift */; };
+		D24885542384F368008F708F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B632850621C2D98900FD5510 /* LocationManager.swift */; };
+		D2C299EA23850B150050CEC7 /* UIOverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D97A221C8453F0075FE0A /* UIOverlayController.swift */; };
+		D2C299EB23850B180050CEC7 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D97A421C854C20075FE0A /* OverlayViewController.swift */; };
+		D2C299ED23850B1B0050CEC7 /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FE960421B61FEE0087A21F /* TouchView.swift */; };
+		D2C299EE23850B210050CEC7 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D97A621C9843B0075FE0A /* Animator.swift */; };
+		D2C299EF23850B240050CEC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B632851621C4330500FD5510 /* Constants.swift */; };
+		D2C299F023850B270050CEC7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62CE86421CC0FDF0053F9B3 /* Reachability.swift */; };
+		D2C299F123850B290050CEC7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D979621C4404E0075FE0A /* Utils.swift */; };
+		D2C299F223850B340050CEC7 /* Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EAD6DC21DAB48800DF5127 /* Prefix.swift */; };
+		D2C299F5238513990050CEC7 /* MyriadPro-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = B632850A21C330A500FD5510 /* MyriadPro-Regular.OTF */; };
+		D2C299F62385139C0050CEC7 /* webxr.js in Resources */ = {isa = PBXBuildFile; fileRef = 8E5089D7211B6DA90059015B /* webxr.js */; };
+		D2C299F8238513AC0050CEC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041503D31F28944F00887400 /* Assets.xcassets */; };
+		D2C299F9238513AF0050CEC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 625051081FCDBDBE00EEAC0A /* GoogleService-Info.plist */; };
+		D2C299FC238514470050CEC7 /* TermsAndConditionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625FA2E4202046BF00F62698 /* TermsAndConditionsTableViewCell.swift */; };
+		D2C299FD238514500050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 625FA2E5202046BF00F62698 /* TermsAndConditionsTableViewCell.xib */; };
+		D2C299FE238514600050CEC7 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62242ACA201F2D3600506412 /* TextTableViewCell.xib */; };
+		D2C299FF238514620050CEC7 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242AC9201F2D3600506412 /* TextTableViewCell.swift */; };
+		D2C29A00238514650050CEC7 /* SwitchInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62242AC6201F2AE100506412 /* SwitchInputTableViewCell.xib */; };
+		D2C29A01238514670050CEC7 /* SwitchInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242AC5201F2AE100506412 /* SwitchInputTableViewCell.swift */; };
+		D2C29A022385146A0050CEC7 /* SegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6679352222894C600939804 /* SegmentedControlTableViewCell.xib */; };
+		D2C29A032385146D0050CEC7 /* SegmentedControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6679351222894C600939804 /* SegmentedControlTableViewCell.swift */; };
+		D2C29A04238514700050CEC7 /* TextInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62242AC2201F2A0700506412 /* TextInputTableViewCell.xib */; };
+		D2C29A05238514750050CEC7 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242AC1201F2A0700506412 /* TextInputTableViewCell.swift */; };
+		D2C29A06238514780050CEC7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242ABF201F037F00506412 /* SettingsViewController.swift */; };
+		D2C29A072385149F0050CEC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041503D01F28944F00887400 /* Main.storyboard */; };
+		D2C29A08238514C30050CEC7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 620D24A01FC48994002127FD /* Settings.bundle */; };
+		D2C29A09238514D00050CEC7 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A815671F419EB60082D31D /* Models.scnassets */; };
+		D2C29A0A238514DE0050CEC7 /* Web in Resources */ = {isa = PBXBuildFile; fileRef = 8ED9EBB2211C6FB000DA58F1 /* Web */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D24885232384F26C008F708F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 041503B91F28944F00887400 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D24885182384F26C008F708F;
+			remoteInfo = WebXR;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0401E04A1F612C240075D823 /* BarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarView.xib; sourceTree = "<group>"; };
@@ -147,6 +224,12 @@
 		B6FEAC0C224AC20200EE0343 /* ShaderTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderTypes.swift; sourceTree = "<group>"; };
 		B6FEAC0E224AD4D500EE0343 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		C99925CDAC21EAF144F18C57 /* Pods-XRViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XRViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XRViewer/Pods-XRViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		D24885192384F26C008F708F /* WebXR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebXR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D248851B2384F26C008F708F /* WebXR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebXR.h; sourceTree = "<group>"; };
+		D248851C2384F26C008F708F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D24885212384F26C008F708F /* WebXRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebXRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24885262384F26C008F708F /* WebXRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebXRTests.m; sourceTree = "<group>"; };
+		D24885282384F26C008F708F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +241,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D24885162384F26C008F708F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D248851E2384F26C008F708F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24885222384F26C008F708F /* WebXR.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -166,6 +264,8 @@
 			children = (
 				8ED9EBB2211C6FB000DA58F1 /* Web */,
 				041503C31F28944F00887400 /* XRViewer */,
+				D248851A2384F26C008F708F /* WebXR */,
+				D24885252384F26C008F708F /* WebXRTests */,
 				041503C21F28944F00887400 /* Products */,
 				07E2D54B7DC6F30BCB750F7D /* Pods */,
 				8C9E99F056CB67F28E2A9647 /* Frameworks */,
@@ -176,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				041503C11F28944F00887400 /* XRViewer.app */,
+				D24885192384F26C008F708F /* WebXR.framework */,
+				D24885212384F26C008F708F /* WebXRTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,7 +469,38 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D248851A2384F26C008F708F /* WebXR */ = {
+			isa = PBXGroup;
+			children = (
+				D248851B2384F26C008F708F /* WebXR.h */,
+				D248851C2384F26C008F708F /* Info.plist */,
+			);
+			path = WebXR;
+			sourceTree = "<group>";
+		};
+		D24885252384F26C008F708F /* WebXRTests */ = {
+			isa = PBXGroup;
+			children = (
+				D24885262384F26C008F708F /* WebXRTests.m */,
+				D24885282384F26C008F708F /* Info.plist */,
+			);
+			path = WebXRTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D24885142384F26C008F708F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24885292384F26C008F708F /* WebXR.h in Headers */,
+				D24885392384F318008F708F /* ARKController.h in Headers */,
+				D24885382384F315008F708F /* ARKHelper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		041503C01F28944F00887400 /* XRViewer */ = {
@@ -388,6 +521,42 @@
 			productReference = 041503C11F28944F00887400 /* XRViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D24885182384F26C008F708F /* WebXR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D248852E2384F26C008F708F /* Build configuration list for PBXNativeTarget "WebXR" */;
+			buildPhases = (
+				D24885142384F26C008F708F /* Headers */,
+				D24885152384F26C008F708F /* Sources */,
+				D24885162384F26C008F708F /* Frameworks */,
+				D24885172384F26C008F708F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebXR;
+			productName = WebXR;
+			productReference = D24885192384F26C008F708F /* WebXR.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D24885202384F26C008F708F /* WebXRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D248852F2384F26C008F708F /* Build configuration list for PBXNativeTarget "WebXRTests" */;
+			buildPhases = (
+				D248851D2384F26C008F708F /* Sources */,
+				D248851E2384F26C008F708F /* Frameworks */,
+				D248851F2384F26C008F708F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D24885242384F26C008F708F /* PBXTargetDependency */,
+			);
+			name = WebXRTests;
+			productName = WebXRTests;
+			productReference = D24885212384F26C008F708F /* WebXRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -400,6 +569,14 @@
 					041503C01F28944F00887400 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0920;
+					};
+					D24885182384F26C008F708F = {
+						CreatedOnToolsVersion = 11.2;
+						ProvisioningStyle = Automatic;
+					};
+					D24885202384F26C008F708F = {
+						CreatedOnToolsVersion = 11.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -417,6 +594,8 @@
 			projectRoot = "";
 			targets = (
 				041503C01F28944F00887400 /* XRViewer */,
+				D24885182384F26C008F708F /* WebXR */,
+				D24885202384F26C008F708F /* WebXRTests */,
 			);
 		};
 /* End PBXProject section */
@@ -442,6 +621,35 @@
 				625051091FCDBDBE00EEAC0A /* GoogleService-Info.plist in Resources */,
 				62242AC8201F2AE100506412 /* SwitchInputTableViewCell.xib in Resources */,
 				8ED9EBB3211C6FB000DA58F1 /* Web in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D24885172384F26C008F708F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2C299F62385139C0050CEC7 /* webxr.js in Resources */,
+				D24885522384F361008F708F /* BarView.xib in Resources */,
+				D2C29A072385149F0050CEC7 /* Main.storyboard in Resources */,
+				D24885312384F2F4008F708F /* RequestXRPermissionsViewController.xib in Resources */,
+				D2C299FD238514500050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */,
+				D2C29A022385146A0050CEC7 /* SegmentedControlTableViewCell.xib in Resources */,
+				D2C29A04238514700050CEC7 /* TextInputTableViewCell.xib in Resources */,
+				D2C299F8238513AC0050CEC7 /* Assets.xcassets in Resources */,
+				D2C29A08238514C30050CEC7 /* Settings.bundle in Resources */,
+				D2C299F5238513990050CEC7 /* MyriadPro-Regular.OTF in Resources */,
+				D2C299FE238514600050CEC7 /* TextTableViewCell.xib in Resources */,
+				D2C29A09238514D00050CEC7 /* Models.scnassets in Resources */,
+				D2C299F9238513AF0050CEC7 /* GoogleService-Info.plist in Resources */,
+				D2C29A00238514650050CEC7 /* SwitchInputTableViewCell.xib in Resources */,
+				D2C29A0A238514DE0050CEC7 /* Web in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D248851F2384F26C008F708F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +732,77 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D24885152384F26C008F708F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D248853E2384F325008F708F /* ARKController+ARSessionObserver.swift in Sources */,
+				D248853B2384F31D008F708F /* ARKController+Anchors.swift in Sources */,
+				D248854C2384F350008F708F /* Renderer.swift in Sources */,
+				D2C299FC238514470050CEC7 /* TermsAndConditionsTableViewCell.swift in Sources */,
+				D248853C2384F320008F708F /* ARKController+AppState.swift in Sources */,
+				D2C299EF23850B240050CEC7 /* Constants.swift in Sources */,
+				D248853D2384F323008F708F /* ARKController+ARSessionDelegate.swift in Sources */,
+				D2C299EB23850B180050CEC7 /* OverlayViewController.swift in Sources */,
+				D2C299FF238514620050CEC7 /* TextTableViewCell.swift in Sources */,
+				D24885402384F32A008F708F /* ARKController+Frame.swift in Sources */,
+				D2C29A032385146D0050CEC7 /* SegmentedControlTableViewCell.swift in Sources */,
+				D24885452384F337008F708F /* ARKSceneKitController.swift in Sources */,
+				D24885462384F33A008F708F /* ARSCNView+HitTest.swift in Sources */,
+				D24885332384F2FE008F708F /* ViewController.swift in Sources */,
+				D24885342384F300008F708F /* ViewController+MessagePanel.swift in Sources */,
+				D24885352384F30B008F708F /* LayerView.swift in Sources */,
+				D2C299EA23850B150050CEC7 /* UIOverlayController.swift in Sources */,
+				D24885482384F33E008F708F /* FocusNode.swift in Sources */,
+				D24885362384F30E008F708F /* AppState.swift in Sources */,
+				D248854A2384F345008F708F /* AnchorNode.swift in Sources */,
+				D24885412384F32C008F708F /* ARKController+Images.swift in Sources */,
+				D24885442384F333008F708F /* HitTestResult.swift in Sources */,
+				D2C299F123850B290050CEC7 /* Utils.swift in Sources */,
+				D248854E2384F355008F708F /* ShaderTypes.swift in Sources */,
+				D248853A2384F31A008F708F /* ARKController.m in Sources */,
+				D2C299ED23850B1B0050CEC7 /* TouchView.swift in Sources */,
+				D2C29A06238514780050CEC7 /* SettingsViewController.swift in Sources */,
+				D24885542384F368008F708F /* LocationManager.swift in Sources */,
+				D2C29A05238514750050CEC7 /* TextInputTableViewCell.swift in Sources */,
+				D2C29A01238514670050CEC7 /* SwitchInputTableViewCell.swift in Sources */,
+				D2C299F223850B340050CEC7 /* Prefix.swift in Sources */,
+				D24885512384F35E008F708F /* ActivityIndicatorButton.swift in Sources */,
+				D24885472384F33C008F708F /* SCNNode+Show.swift in Sources */,
+				D24885322384F2FA008F708F /* AnalyticsManager.swift in Sources */,
+				D248854D2384F352008F708F /* Shaders.metal in Sources */,
+				D24885422384F32F008F708F /* ARKController+WorldMap.swift in Sources */,
+				D24885302384F2ED008F708F /* RequestXRPermissionsViewController.swift in Sources */,
+				D24885372384F311008F708F /* AppStateController.swift in Sources */,
+				D248854B2384F34B008F708F /* ARKMetalController.swift in Sources */,
+				D24885502384F35C008F708F /* BarView.swift in Sources */,
+				D2C299EE23850B210050CEC7 /* Animator.swift in Sources */,
+				D24885532384F365008F708F /* MessageController.swift in Sources */,
+				D248853F2384F328008F708F /* ARKController+Camera.swift in Sources */,
+				D24885492384F342008F708F /* PlaneNode.swift in Sources */,
+				D248854F2384F359008F708F /* WebController.swift in Sources */,
+				D24885432384F331008F708F /* ARKControllerProtocol.swift in Sources */,
+				D2C299F023850B270050CEC7 /* Reachability.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D248851D2384F26C008F708F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24885272384F26C008F708F /* WebXRTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D24885242384F26C008F708F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D24885182384F26C008F708F /* WebXR */;
+			targetProxy = D24885232384F26C008F708F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		041503D01F28944F00887400 /* Main.storyboard */ = {
@@ -663,7 +941,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = L3Y5M4S33M;
+				DEVELOPMENT_TEAM = B76PGC4MEK;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -673,7 +951,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewercmb;
+				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewercmbtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "XRViewer/Resources/XRViewer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -688,7 +966,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = L3Y5M4S33M;
+				DEVELOPMENT_TEAM = B76PGC4MEK;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -698,10 +976,106 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewercmb;
+				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewercmbtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "XRViewer/Resources/XRViewer-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D248852A2384F26C008F708F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"SEND_PLANES_BY_DEFAULT=0",
+					"TargetFramework=1",
+				);
+				INFOPLIST_FILE = WebXR/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "\"-D\" \"TargetFramework\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmbchina..WebXR;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D248852B2384F26C008F708F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WebXR/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "\"-D\" \"TargetFramework\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmbchina..WebXR;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D248852C2384F26C008F708F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WebXRTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmbchina..WebXRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D248852D2384F26C008F708F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WebXRTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmbchina..WebXRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -723,6 +1097,24 @@
 			buildConfigurations = (
 				041503DE1F28944F00887400 /* Debug */,
 				041503DF1F28944F00887400 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D248852E2384F26C008F708F /* Build configuration list for PBXNativeTarget "WebXR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D248852A2384F26C008F708F /* Debug */,
+				D248852B2384F26C008F708F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D248852F2384F26C008F708F /* Build configuration list for PBXNativeTarget "WebXRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D248852C2384F26C008F708F /* Debug */,
+				D248852D2384F26C008F708F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

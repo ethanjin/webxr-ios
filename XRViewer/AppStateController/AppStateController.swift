@@ -8,7 +8,7 @@ import UIKit
  - url: Shows the URL Bar
  - urlDebug: Shows the URL Bar and the AR debug info
  */
-@objc enum ShowMode: Int {
+@objc public enum ShowMode: Int {
     case nothing    = 0
     case debug      = 1
     case url        = 2
