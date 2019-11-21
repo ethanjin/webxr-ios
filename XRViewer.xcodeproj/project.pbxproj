@@ -135,10 +135,10 @@
 		D2C29A04238514700050CEC7 /* TextInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62242AC2201F2A0700506412 /* TextInputTableViewCell.xib */; };
 		D2C29A05238514750050CEC7 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242AC1201F2A0700506412 /* TextInputTableViewCell.swift */; };
 		D2C29A06238514780050CEC7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242ABF201F037F00506412 /* SettingsViewController.swift */; };
-		D2C29A072385149F0050CEC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041503D01F28944F00887400 /* Main.storyboard */; };
 		D2C29A08238514C30050CEC7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 620D24A01FC48994002127FD /* Settings.bundle */; };
 		D2C29A09238514D00050CEC7 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A815671F419EB60082D31D /* Models.scnassets */; };
 		D2C29A0A238514DE0050CEC7 /* Web in Resources */ = {isa = PBXBuildFile; fileRef = 8ED9EBB2211C6FB000DA58F1 /* Web */; };
+		D2C29A1323862E220050CEC7 /* WebXR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A1223862E220050CEC7 /* WebXR.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +230,7 @@
 		D24885212384F26C008F708F /* WebXRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebXRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24885262384F26C008F708F /* WebXRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebXRTests.m; sourceTree = "<group>"; };
 		D24885282384F26C008F708F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2C29A1223862E220050CEC7 /* WebXR.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebXR.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				D248851B2384F26C008F708F /* WebXR.h */,
+				D2C29A1223862E220050CEC7 /* WebXR.storyboard */,
 				D248851C2384F26C008F708F /* Info.plist */,
 			);
 			path = WebXR;
@@ -628,9 +630,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C29A1323862E220050CEC7 /* WebXR.storyboard in Resources */,
 				D2C299F62385139C0050CEC7 /* webxr.js in Resources */,
 				D24885522384F361008F708F /* BarView.xib in Resources */,
-				D2C29A072385149F0050CEC7 /* Main.storyboard in Resources */,
 				D24885312384F2F4008F708F /* RequestXRPermissionsViewController.xib in Resources */,
 				D2C299FD238514500050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */,
 				D2C29A022385146A0050CEC7 /* SegmentedControlTableViewCell.xib in Resources */,
