@@ -11,7 +11,7 @@
 		041503D21F28944F00887400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041503D01F28944F00887400 /* Main.storyboard */; };
 		041503D71F28944F00887400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041503D51F28944F00887400 /* LaunchScreen.storyboard */; };
 		04A815681F419EB60082D31D /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A815671F419EB60082D31D /* Models.scnassets */; };
-		04A8156A1F419F840082D31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041503D31F28944F00887400 /* Assets.xcassets */; };
+		04A8156A1F419F840082D31D /* WebXRAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041503D31F28944F00887400 /* WebXRAssets.xcassets */; };
 		04A9837A1F32291D00120CF8 /* ARKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A983651F32268900120CF8 /* ARKController.m */; };
 		04A9837C1F32292900120CF8 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 04A9836A1F3226A500120CF8 /* Shaders.metal */; };
 		591A8C502FA83D70E8F5B5B4 /* Pods_XRViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CB6E6E1AD338266A9AB3DC /* Pods_XRViewer.framework */; };
@@ -122,7 +122,7 @@
 		D2C299F223850B340050CEC7 /* Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EAD6DC21DAB48800DF5127 /* Prefix.swift */; };
 		D2C299F5238513990050CEC7 /* MyriadPro-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = B632850A21C330A500FD5510 /* MyriadPro-Regular.OTF */; };
 		D2C299F62385139C0050CEC7 /* webxr.js in Resources */ = {isa = PBXBuildFile; fileRef = 8E5089D7211B6DA90059015B /* webxr.js */; };
-		D2C299F8238513AC0050CEC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041503D31F28944F00887400 /* Assets.xcassets */; };
+		D2C299F8238513AC0050CEC7 /* WebXRAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041503D31F28944F00887400 /* WebXRAssets.xcassets */; };
 		D2C299F9238513AF0050CEC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 625051081FCDBDBE00EEAC0A /* GoogleService-Info.plist */; };
 		D2C299FC238514470050CEC7 /* TermsAndConditionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625FA2E4202046BF00F62698 /* TermsAndConditionsTableViewCell.swift */; };
 		D2C299FD238514500050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 625FA2E5202046BF00F62698 /* TermsAndConditionsTableViewCell.xib */; };
@@ -155,7 +155,7 @@
 		0401E04A1F612C240075D823 /* BarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarView.xib; sourceTree = "<group>"; };
 		041503C11F28944F00887400 /* XRViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XRViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		041503D11F28944F00887400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		041503D31F28944F00887400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		041503D31F28944F00887400 /* WebXRAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WebXRAssets.xcassets; sourceTree = "<group>"; };
 		041503D61F28944F00887400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041503D81F28944F00887400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04A815671F419EB60082D31D /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 				6241012B1FEABABF006FDBE3 /* XRViewer-Bridging-Header.h */,
 				041503D81F28944F00887400 /* Info.plist */,
 				625051081FCDBDBE00EEAC0A /* GoogleService-Info.plist */,
-				041503D31F28944F00887400 /* Assets.xcassets */,
+				041503D31F28944F00887400 /* WebXRAssets.xcassets */,
 				041503D01F28944F00887400 /* Main.storyboard */,
 				041503D51F28944F00887400 /* LaunchScreen.storyboard */,
 				B6EAD6DC21DAB48800DF5127 /* Prefix.swift */,
@@ -615,7 +615,7 @@
 				625FA2E7202046BF00F62698 /* TermsAndConditionsTableViewCell.xib in Resources */,
 				B6679354222894C600939804 /* SegmentedControlTableViewCell.xib in Resources */,
 				62242AC4201F2A0700506412 /* TextInputTableViewCell.xib in Resources */,
-				04A8156A1F419F840082D31D /* Assets.xcassets in Resources */,
+				04A8156A1F419F840082D31D /* WebXRAssets.xcassets in Resources */,
 				620D24A11FC48994002127FD /* Settings.bundle in Resources */,
 				B632850B21C330A500FD5510 /* MyriadPro-Regular.OTF in Resources */,
 				62242ACC201F2D3600506412 /* TextTableViewCell.xib in Resources */,
@@ -637,7 +637,7 @@
 				D2C299FD238514500050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */,
 				D2C29A022385146A0050CEC7 /* SegmentedControlTableViewCell.xib in Resources */,
 				D2C29A04238514700050CEC7 /* TextInputTableViewCell.xib in Resources */,
-				D2C299F8238513AC0050CEC7 /* Assets.xcassets in Resources */,
+				D2C299F8238513AC0050CEC7 /* WebXRAssets.xcassets in Resources */,
 				D2C29A08238514C30050CEC7 /* Settings.bundle in Resources */,
 				D2C299F5238513990050CEC7 /* MyriadPro-Regular.OTF in Resources */,
 				D2C299FE238514600050CEC7 /* TextTableViewCell.xib in Resources */,
@@ -950,7 +950,7 @@
 					"SEND_PLANES_BY_DEFAULT=0",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/XRViewer/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewercmbtest;
@@ -975,7 +975,7 @@
 					"SEND_PLANES_BY_DEFAULT=0",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/XRViewer/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = org.mozilla.ios.XRViewercmbtest;
