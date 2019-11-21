@@ -4,7 +4,11 @@
 #import "Compression.h"
 
 #if TargetFramework
+#if __has_include("WebXR-Swift.h")
+#import "WebXR-Swift.h"
+#else
 #import <WebXR/WebXR-Swift.h>
+#endif
 #else
 #import "XRViewer-Swift.h"
 #endif

@@ -109,7 +109,7 @@ let INTERNET_OFFLINE_CODE = -1009
 let USER_CANCELLED_LOADING_CODE = -999
 
 // URL
-let WEB_URL = "https://webxr-ios.webxrexperiments.com/splash.html"
+let WEB_URL = "https://try.cdcc.cmbchina.com/ARWeb/examples/image_detection/index1.html"
 let LAST_URL_KEY = "lastURL"
 
 // MESSAGES

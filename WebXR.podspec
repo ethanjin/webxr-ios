@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.license               = { :'type' => 'Copyright', :'text' => ' Copyright 2010-2019 CMB. All Rights Reserved. '}
   s.source                = { :git => 'git@git.cs:iOS_Common/CMBTestLib.git', :tag => "#{s.version}" }
 
-  s.platform = :ios, '9.0'
-  s.static_framework = true
+  s.platform = :ios, '12.0'
+  # s.static_framework = true
 
   s.cocoapods_version = '>= 1.4.0'
   if s.respond_to?(:swift_versions) then
@@ -25,16 +25,18 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     'ENABLE_BITCODE' => 'NO',
     'GCC_PREPROCESSOR_DEFINITIONS' => ['$(inherited)', 'SEND_PLANES_BY_DEFAULT=0', 'DEBUG=1', 'TargetFramework=1'],
-    # 'DEFINES_MODULE' => 'YES',
-    # 'OTHER_LDFLAGS' => '$(inherited) -Xlinker -no_application_extension',
-    # 'OTHER_SWIFT_FLAGS' => '$(inherited) -suppress-warnings',
-    # 'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/Frameworks'
+    'DEFINES_MODULE' => 'YES',
+    'OTHER_LDFLAGS' => '$(inherited) -Xlinker -no_application_extension',
+    'OTHER_SWIFT_FLAGS' => '$(inherited) -suppress-warnings',
+    'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/Frameworks',
+    # 'SWIFT_OBJC_BRIDGING_HEADER' => 'XRViewer/Resources/XRViewer-Bridging-Header.h'
+    # 'LIBRARY_SEARCH_PATHS' => "$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)"
   }
 
   s.source_files = ['XRViewer/**/*.{swift,h,m,mm}', 'WebXR/**/*.{swift,h,m,mm}']
+  s.exclude_files = ['XRViewer/AppDelegate.swift', 'XRViewer/Resources/XRViewer-Bridging-Header.h']
   s.public_header_files = ['XRViewer/**/*.h', 'WebXR/**/*.h']
-
-  s.resources = ['XRViewer/**/*.{png,jpg,caf,gif,xib,scnassets,bundle}', 'Web/*', 'XRViewer/Resources/GoogleService-Info.plist']
+  s.resources = ['XRViewer/**/*.{png,jpg,caf,gif,xib,scnassets,bundle}', 'Web/*', 'XRViewer/Resources/GoogleService-Info.plist', 'WebXR/**/*.{png,jpg,caf,gif,xib,storyboard,scnassets,bundle}']
   s.resource_bundles = { 'Resources' => ['XRViewer/**/*.xcassets']}
 
 end

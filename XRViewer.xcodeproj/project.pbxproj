@@ -76,7 +76,6 @@
 		D24885272384F26C008F708F /* WebXRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D24885262384F26C008F708F /* WebXRTests.m */; };
 		D24885292384F26C008F708F /* WebXR.h in Headers */ = {isa = PBXBuildFile; fileRef = D248851B2384F26C008F708F /* WebXR.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D24885302384F2ED008F708F /* RequestXRPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B7A6962266594B008E8978 /* RequestXRPermissionsViewController.swift */; };
-		D24885312384F2F4008F708F /* RequestXRPermissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B7A6972266594B008E8978 /* RequestXRPermissionsViewController.xib */; };
 		D24885322384F2FA008F708F /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6241012C1FEABABF006FDBE3 /* AnalyticsManager.swift */; };
 		D24885332384F2FE008F708F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62CE86221CAD3B00053F9B3 /* ViewController.swift */; };
 		D24885342384F300008F708F /* ViewController+MessagePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6468D8F228F5074002F22A3 /* ViewController+MessagePanel.swift */; };
@@ -109,7 +108,6 @@
 		D248854F2384F359008F708F /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658C0F121BF43D500538D57 /* WebController.swift */; };
 		D24885502384F35C008F708F /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679967821B06A7000612AF4 /* BarView.swift */; };
 		D24885512384F35E008F708F /* ActivityIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2B2622249D500031955F /* ActivityIndicatorButton.swift */; };
-		D24885522384F361008F708F /* BarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0401E04A1F612C240075D823 /* BarView.xib */; };
 		D24885532384F365008F708F /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B632850821C2F24200FD5510 /* MessageController.swift */; };
 		D24885542384F368008F708F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B632850621C2D98900FD5510 /* LocationManager.swift */; };
 		D2C299EA23850B150050CEC7 /* UIOverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D97A221C8453F0075FE0A /* UIOverlayController.swift */; };
@@ -125,20 +123,22 @@
 		D2C299F8238513AC0050CEC7 /* WebXRAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041503D31F28944F00887400 /* WebXRAssets.xcassets */; };
 		D2C299F9238513AF0050CEC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 625051081FCDBDBE00EEAC0A /* GoogleService-Info.plist */; };
 		D2C299FC238514470050CEC7 /* TermsAndConditionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625FA2E4202046BF00F62698 /* TermsAndConditionsTableViewCell.swift */; };
-		D2C299FD238514500050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 625FA2E5202046BF00F62698 /* TermsAndConditionsTableViewCell.xib */; };
-		D2C299FE238514600050CEC7 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62242ACA201F2D3600506412 /* TextTableViewCell.xib */; };
 		D2C299FF238514620050CEC7 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242AC9201F2D3600506412 /* TextTableViewCell.swift */; };
-		D2C29A00238514650050CEC7 /* SwitchInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62242AC6201F2AE100506412 /* SwitchInputTableViewCell.xib */; };
 		D2C29A01238514670050CEC7 /* SwitchInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242AC5201F2AE100506412 /* SwitchInputTableViewCell.swift */; };
-		D2C29A022385146A0050CEC7 /* SegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6679352222894C600939804 /* SegmentedControlTableViewCell.xib */; };
 		D2C29A032385146D0050CEC7 /* SegmentedControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6679351222894C600939804 /* SegmentedControlTableViewCell.swift */; };
-		D2C29A04238514700050CEC7 /* TextInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62242AC2201F2A0700506412 /* TextInputTableViewCell.xib */; };
 		D2C29A05238514750050CEC7 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242AC1201F2A0700506412 /* TextInputTableViewCell.swift */; };
 		D2C29A06238514780050CEC7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62242ABF201F037F00506412 /* SettingsViewController.swift */; };
 		D2C29A08238514C30050CEC7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 620D24A01FC48994002127FD /* Settings.bundle */; };
 		D2C29A09238514D00050CEC7 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A815671F419EB60082D31D /* Models.scnassets */; };
 		D2C29A0A238514DE0050CEC7 /* Web in Resources */ = {isa = PBXBuildFile; fileRef = 8ED9EBB2211C6FB000DA58F1 /* Web */; };
 		D2C29A1323862E220050CEC7 /* WebXR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A1223862E220050CEC7 /* WebXR.storyboard */; };
+		D2C29A38238674260050CEC7 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A31238674260050CEC7 /* TextTableViewCell.xib */; };
+		D2C29A39238674260050CEC7 /* SwitchInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A32238674260050CEC7 /* SwitchInputTableViewCell.xib */; };
+		D2C29A3A238674260050CEC7 /* BarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A33238674260050CEC7 /* BarView.xib */; };
+		D2C29A3B238674260050CEC7 /* TextInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A34238674260050CEC7 /* TextInputTableViewCell.xib */; };
+		D2C29A3C238674260050CEC7 /* RequestXRPermissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A35238674260050CEC7 /* RequestXRPermissionsViewController.xib */; };
+		D2C29A3D238674260050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A36238674260050CEC7 /* TermsAndConditionsTableViewCell.xib */; };
+		D2C29A3E238674260050CEC7 /* SegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C29A37238674260050CEC7 /* SegmentedControlTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +231,13 @@
 		D24885262384F26C008F708F /* WebXRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebXRTests.m; sourceTree = "<group>"; };
 		D24885282384F26C008F708F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C29A1223862E220050CEC7 /* WebXR.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebXR.storyboard; sourceTree = "<group>"; };
+		D2C29A31238674260050CEC7 /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		D2C29A32238674260050CEC7 /* SwitchInputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchInputTableViewCell.xib; sourceTree = "<group>"; };
+		D2C29A33238674260050CEC7 /* BarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarView.xib; sourceTree = "<group>"; };
+		D2C29A34238674260050CEC7 /* TextInputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputTableViewCell.xib; sourceTree = "<group>"; };
+		D2C29A35238674260050CEC7 /* RequestXRPermissionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestXRPermissionsViewController.xib; sourceTree = "<group>"; };
+		D2C29A36238674260050CEC7 /* TermsAndConditionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsAndConditionsTableViewCell.xib; sourceTree = "<group>"; };
+		D2C29A37238674260050CEC7 /* SegmentedControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedControlTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -475,6 +482,13 @@
 			children = (
 				D248851B2384F26C008F708F /* WebXR.h */,
 				D2C29A1223862E220050CEC7 /* WebXR.storyboard */,
+				D2C29A33238674260050CEC7 /* BarView.xib */,
+				D2C29A35238674260050CEC7 /* RequestXRPermissionsViewController.xib */,
+				D2C29A37238674260050CEC7 /* SegmentedControlTableViewCell.xib */,
+				D2C29A32238674260050CEC7 /* SwitchInputTableViewCell.xib */,
+				D2C29A36238674260050CEC7 /* TermsAndConditionsTableViewCell.xib */,
+				D2C29A34238674260050CEC7 /* TextInputTableViewCell.xib */,
+				D2C29A31238674260050CEC7 /* TextTableViewCell.xib */,
 				D248851C2384F26C008F708F /* Info.plist */,
 			);
 			path = WebXR;
@@ -630,21 +644,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C29A39238674260050CEC7 /* SwitchInputTableViewCell.xib in Resources */,
+				D2C29A3D238674260050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */,
 				D2C29A1323862E220050CEC7 /* WebXR.storyboard in Resources */,
 				D2C299F62385139C0050CEC7 /* webxr.js in Resources */,
-				D24885522384F361008F708F /* BarView.xib in Resources */,
-				D24885312384F2F4008F708F /* RequestXRPermissionsViewController.xib in Resources */,
-				D2C299FD238514500050CEC7 /* TermsAndConditionsTableViewCell.xib in Resources */,
-				D2C29A022385146A0050CEC7 /* SegmentedControlTableViewCell.xib in Resources */,
-				D2C29A04238514700050CEC7 /* TextInputTableViewCell.xib in Resources */,
 				D2C299F8238513AC0050CEC7 /* WebXRAssets.xcassets in Resources */,
 				D2C29A08238514C30050CEC7 /* Settings.bundle in Resources */,
+				D2C29A3A238674260050CEC7 /* BarView.xib in Resources */,
 				D2C299F5238513990050CEC7 /* MyriadPro-Regular.OTF in Resources */,
-				D2C299FE238514600050CEC7 /* TextTableViewCell.xib in Resources */,
+				D2C29A3E238674260050CEC7 /* SegmentedControlTableViewCell.xib in Resources */,
 				D2C29A09238514D00050CEC7 /* Models.scnassets in Resources */,
 				D2C299F9238513AF0050CEC7 /* GoogleService-Info.plist in Resources */,
-				D2C29A00238514650050CEC7 /* SwitchInputTableViewCell.xib in Resources */,
 				D2C29A0A238514DE0050CEC7 /* Web in Resources */,
+				D2C29A3C238674260050CEC7 /* RequestXRPermissionsViewController.xib in Resources */,
+				D2C29A38238674260050CEC7 /* TextTableViewCell.xib in Resources */,
+				D2C29A3B238674260050CEC7 /* TextInputTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
