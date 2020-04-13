@@ -223,7 +223,7 @@ open class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDele
 
 // MARK: - ARSCNViewDelegate
 
-    private func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async(execute: {
             let lightEstimate: CGFloat? = self.session?.currentFrame?.lightEstimate?.ambientIntensity
 
@@ -236,7 +236,7 @@ open class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDele
         })
     }
 
-    private func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+    public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async(execute: {
             if anchor is ARPlaneAnchor {
                 var plane: PlaneNode? = nil
@@ -260,10 +260,10 @@ open class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDele
         })
     }
 
-    private func renderer(_ renderer: SCNSceneRenderer, willUpdate node: SCNNode, for anchor: ARAnchor) {
+    public func renderer(_ renderer: SCNSceneRenderer, willUpdate node: SCNNode, for anchor: ARAnchor) {
     }
 
-    private func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    public func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async(execute: {
             if (anchor is ARPlaneAnchor) {
                 let plane = self.planes[anchor.identifier]
@@ -272,7 +272,7 @@ open class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDele
         })
     }
 
-    private func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+    public func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async(execute: {
             if (node is AnchorNode) {
                 self.anchorsNodes.removeAll(where: { element in element == node })

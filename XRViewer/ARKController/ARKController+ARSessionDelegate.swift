@@ -4,7 +4,7 @@ extension ARKController: ARSessionDelegate {
     // to the same functions. It's annoying the workaround doesn't resolve the warnings,
     // but it works for now.
     @objc(session:didUpdateFrame:)
-    func session(_ session: ARSession, didUpdate frame: ARFrame) {
+    public func session(_ session: ARSession, didUpdate frame: ARFrame) {
         updateARKData(with: frame)
         
         didUpdate(self)
@@ -16,7 +16,7 @@ extension ARKController: ARSessionDelegate {
     }
     
     @objc(session:didAddAnchors:)
-    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+    public func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         print("Add Anchors - \(anchors.debugDescription)")
         
         if webXRAuthorizationStatus == .notDetermined {
@@ -68,7 +68,7 @@ extension ARKController: ARSessionDelegate {
     }
     
     @objc(session:didUpdateAnchors:)
-    func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
+    public func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         //print(@"Update Anchors - %@", [anchors debugDescription]);
         //print(@"Update Anchors - %lu", anchors.count);
         for updatedAnchor: ARAnchor in anchors {
@@ -82,7 +82,7 @@ extension ARKController: ARSessionDelegate {
     }
     
     @objc(session:didRemoveAnchors:)
-    func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {
+    public func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {
         print("Remove Anchors - \(anchors.debugDescription)")
         for removedAnchor: ARAnchor in anchors {
             
